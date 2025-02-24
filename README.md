@@ -11,11 +11,13 @@ How to set up the microservice:
 2. Configure the vite.config.js file to that the '/entry' targets 'http://localhost:5000' (This port was arbitrarily decided upon).
 3. Create a backend directory and copy the "entries-microservice" and all of its contents into the backend directory.
 4. In the .env file within the "entries-microservice" folder, paste in the the correct MongoDB connection string for David's application on the line, MONGODB_CONNECT_STRING=''
-5. Open two terminals, one in the frontend directory and one in the "entries-microservice" directory, and run "npm install" to install all relevant packages and dependencies.
-6. In the terminal for "entries-microservice", run "node server.js" to get the Express server running. You will see the message "Server running on http://localhost:5000
+5. Open three terminals, one in the frontend directory, one in the "entries-microservice" directory, and one for the "users-api" directory,
+6. Run "npm install" to install all relevant packages and dependencies.
+7. In the terminal for "users-api", run "npm start" to get the login page working.
+8. In the terminal for "entries-microservice", run "node server.js" to get the Express server running. You will see the message "Server running on http://localhost:5000
 MongoDB connected", if the server is running correctly.
-7. In the terminal for the frontend directory, run "npm run dev". If it is running correctly, you will receive a http://localhost link that will direct you to David's Brainlog application.
-8. Login and use the form to test entries. When you submit forms, you should receive messages in the "entries-microservice" terminal that look similar to these:
+9. In the terminal for the frontend directory, run "npm run dev". If it is running correctly, you will receive a http://localhost link that will direct you to David's Brainlog application.
+10. Login and use the form to test entries. When you submit forms, you should receive messages in the "entries-microservice" terminal that look similar to these:
 
 Received data: {
   wellbeing: 70,
