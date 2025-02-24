@@ -4,7 +4,16 @@ Version 1.0 of Microservice A for David Sanchez's Brainlog Application
 
 The purpose of this microservice is to connect to the database (MongoDB), receive the data from the entry form in David's application in JSON format, validate if the user has already submitted an entry for the day (we only want one entry per day), then submit the data as a JSON object to MongoDB or return a message if it can not submit the entry. 
 
-Sending data to MongoDB and receving data from the front-end entry form is done using Express. Data is handled by the JournalEntry.js, entry.js, db.js, and server.js files within the microservice. There are console.log messages throughout the server.js file to see if the data is being received and processed. Testing can be done by a user submitting their own entries once they setup the correct listening ports. 
+Sending data to MongoDB and receving data from the front-end entry form is done using Express.
+
+Data is handled by the JournalEntry.js, entry.js, db.js, and server.js files within the microservice:
+- The Journal Entry.js file provides schema and data validation for mongoose.
+- The entry.js file contains the middleware for validating if the user has already cubmitted an entry for the day and also the POST request to submit an entry to the MongoDB database.
+- The db.js file handles connecting to the proper database using the MongoDB connection string in the .env file
+- The server.js file coordinates all the different parts such as receiving and ensuring the entries received from the entry form are JSON files, providing a port for the daily entries, sending the entry data along if there hasn't been an entry for the day, and relaying information through the terminal.
+
+There are console.log messages throughout the server.js file to see if the data is being received and processed. 
+Testing can be done by a user submitting their own entries once they setup the correct listening ports. 
 
 How to set up the microservice:
 1. Download the frontend folder for David's Brainlog application.
